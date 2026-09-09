@@ -55,7 +55,7 @@ def create_booking(payload: BookingCreate, db: Session = Depends(get_db)):
     # Rule 1: Senior Facialist Check
     if payload.practitioner_id == 1 and not payload.is_member:
         raise HTTPException(
-            status_code=400, 
+            status_code=400,
             detail="Senior Facialist is strictly reserved for Members."
         )
     
